@@ -11,59 +11,57 @@ export function Projects() {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: "-100px" })
 
+    // ✅ Inside your Projects component, replace your entire `projects` array with this:
+
     const projects = [
         {
-            title: "E-Commerce Platform",
+            
+            title: "Bistro Restaurant",
             description:
-                "Full-stack e-commerce solution with payment integration, admin dashboard, and real-time inventory management",
-            image: "/modern-ecommerce-website.png",
+                "A modern restaurant web app with online menu, table booking, and food delivery integration for a seamless dining experience.",
+            image: "https://i.ibb.co/kgWp2J8V/Screenshot-2025-10-12-at-8-24-15-PM.png",
             tags: ["React", "Node.js", "MongoDB", "Stripe"],
-            github: "#",
-            live: "#",
+            github: "https://github.com/NazrulBoston/Bistro-Boss-Client.git",
+            live: "https://eloquent-faloodeh-7cc932.netlify.app/",
         },
         {
-            title: "Social Media Dashboard",
+            title: "Electrical Products Store",
             description:
-                "Analytics dashboard for social media management with real-time data visualization and scheduling features",
-            image: "/analytics-dashboard-dark-theme.png",
-            tags: ["Next.js", "Express", "PostgreSQL", "Chart.js"],
-            github: "#",
-            live: "#",
+                "An e-commerce platform specializing in electrical appliances and gadgets with secure payment and real-time stock updates.",
+            image: "https://i.ibb.co/KjFS78bt/Screenshot-2025-10-12-at-8-29-42-PM.png",
+            tags: ["React", "Firebase", "Tailwind", "MongoDB"],
+            github: "https://github.com/NazrulBoston/assignment-ten-client.git",
+            live: "https://darling-smakager-da748c.netlify.app/",
         },
         {
-            title: "Task Management App",
+            title: "Event Management System",
             description:
-                "Collaborative task management tool with drag-and-drop interface, team collaboration, and progress tracking",
-            image: "/task-management-kanban.png",
-            tags: ["React", "Firebase", "Tailwind", "DnD Kit"],
-            github: "#",
-            live: "#",
+                "An event planning and booking platform with vendor coordination, ticketing, and scheduling features for seamless event organization.",
+            image: "https://i.ibb.co/tTyLWZzP/Screenshot-2025-10-12-at-8-27-45-PM.png",
+           tags: ["React", "Firebase", "Tailwind", "MongoDB"],
+            github: "https://github.com/NazrulBoston/assignment-nine-social-events.git",
+            live: "https://illustrious-melomakarona-347ac2.netlify.app/",
         },
         {
-            title: "Real Estate Platform",
-            description: "Property listing platform with advanced search filters, virtual tours, and agent management system",
-            image: "/modern-real-estate-website.png",
-            tags: ["MERN", "Mapbox", "AWS S3", "Socket.io"],
-            github: "#",
-            live: "#",
+            title: "Donation & Charity Platform",
+            description:
+                "A platform for donors and organizations to connect, manage fundraising campaigns, and track contributions transparently.",
+            image: "https://i.ibb.co/ym7jhvCj/Screenshot-2025-10-12-at-8-23-07-PM.png",
+            tags: ["React", "Firebase", "Tailwind"],
+            github: "https://github.com/NazrulBoston/assignment-eight-donation.git",
+            live: "https://singular-buttercream-21f974.netlify.app/",
         },
         {
-            title: "Blog CMS",
-            description: "Content management system with markdown support, SEO optimization, and multi-author capabilities",
-            image: "/blog-cms-interface.jpg",
-            tags: ["Next.js", "MongoDB", "MDX", "Vercel"],
-            github: "#",
-            live: "#",
-        },
-        {
-            title: "Fitness Tracker",
-            description: "Personal fitness tracking app with workout plans, nutrition tracking, and progress analytics",
-            image: "/fitness-app-dashboard.png",
-            tags: ["React Native", "Node.js", "MongoDB", "Redux"],
-            github: "#",
-            live: "#",
+            title: "Fruit Burst",
+            description:
+                "Fruit Burst is all about freshness, flavor, and pure fruit goodness. We bring you delicious, natural drinks made from handpicked fruits.",
+            image: "https://i.ibb.co/9jY31k7/Screenshot-2025-10-18-at-8-16-10-PM.png",
+          tags: ["React", "Firebase", "Tailwind"],
+            github: "https://github.com/NazrulBoston/fruit-brust.git",
+            live: "https://lambent-fox-bc231e.netlify.app/",
         },
     ]
+
 
     return (
         <section id="projects" className="py-20 md:py-32 bg-muted/30" ref={ref}>
@@ -75,7 +73,7 @@ export function Projects() {
                 >
                     <div className="text-center mb-16">
                         <motion.h2
-                            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                            className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-500 via-pink-500 to-yellow-400 bg-clip-text text-transparent"
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: 0.2 }}
@@ -83,11 +81,12 @@ export function Projects() {
                             Featured Projects
                         </motion.h2>
                         <motion.div
-                            className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-6"
+                            className="w-24 h-1 mx-auto rounded-full bg-gradient-to-r from-orange-500 via-pink-500 to-yellow-400 dark:from-orange-400 dark:via-pink-400 dark:to-yellow-300 shadow-md"
                             initial={{ width: 0 }}
-                            animate={isInView ? { width: 80 } : {}}
+                            animate={isInView ? { width: 96 } : {}}
                             transition={{ delay: 0.4, duration: 0.6 }}
                         />
+
                         <motion.p
                             className="text-lg text-muted-foreground max-w-2xl mx-auto"
                             initial={{ opacity: 0 }}
@@ -107,7 +106,9 @@ export function Projects() {
                                 transition={{ delay: 0.6 + index * 0.1 }}
                                 whileHover={{ y: -10 }}
                             >
-                                <Card className="overflow-hidden h-full hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary/50 group">
+                                <Card
+                                    className="bg-card rounded-lg p-6 border-b-2 border-r-2 border-rose-600 hover:bg-gradient-to-r from-gray-100 to-rose-300 dark:hover:from-gray-800 dark:hover:to-rose-500"
+                                >
                                     <div className="relative overflow-hidden">
                                         <Image
                                             width={500}

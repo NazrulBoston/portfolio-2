@@ -45,10 +45,10 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           <motion.a
             href="#home"
-            className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent"
+            className="text-2xl font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-yellow-400 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
           >
-            Nazrul Islam
+            nazrul.dev
           </motion.a>
 
           {/* Desktop Navigation */}
@@ -57,11 +57,16 @@ export function Navbar() {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors font-medium"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.1 }}
+                className="
+                  text-foreground/80 font-medium relative transition-all duration-300 
+                  hover:text-transparent hover:bg-clip-text 
+                  hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-yellow-400
+                  " 
+                  // 🟢 Added gradient hover effect on nav links
               >
                 {item.name}
               </motion.a>
@@ -95,9 +100,14 @@ export function Navbar() {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  className="block py-2 text-foreground/80 hover:text-primary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                   whileHover={{ x: 10 }}
+                  className="
+                    block py-2 text-foreground/80 font-medium transition-colors 
+                    hover:text-transparent hover:bg-clip-text 
+                    hover:bg-gradient-to-r hover:from-orange-500 hover:via-pink-500 hover:to-yellow-400
+                    " 
+                    // 🟢 Added same gradient hover effect for mobile menu items
                 >
                   {item.name}
                 </motion.a>

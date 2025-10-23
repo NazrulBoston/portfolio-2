@@ -1,62 +1,84 @@
 "use client"
 
-import { Github, Linkedin, Twitter, Mail, Heart } from "lucide-react"
 import { motion } from "framer-motion"
+import { Github, Linkedin, Youtube, Facebook, Mail, Heart } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
+  // Social links with colors
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Mail, href: "#contact", label: "Email" },
+    { icon: Github, href: "https://github.com/NazrulBoston", color: "#181717" },
+    { icon: Linkedin, href: "https://linkedin.com/", color: "#0A66C2" },
+    { icon: Youtube, href: "https://youtube.com/@triplesisters123", color: "#FF0000" },
+    { icon: Facebook, href: "https://www.facebook.com/nazrul.dobon.islam/", color: "#1877F2" },
+    { icon: Mail, href: "#contact", color: "#EA4335" },
+  ]
+
+  // Footer nav items (same as navbar)
+  const navItems = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Services", href: "#services" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
   ]
 
   return (
-    <footer className="bg-muted/50 border-t border-border">
+    // 🟢 Removed background color — transparent footer
+    <footer className="border-t border-border mt-16">
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col items-center gap-8">
-          <motion.div
-            className="text-3xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent"
+
+          {/* Logo */}
+          <motion.a
+            href="#home"
+            className="text-2xl font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-yellow-400 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
           >
-            Nazrul Islam
-          </motion.div>
+            nazrul.dev
+          </motion.a>
 
-          <div className="flex gap-6">
+          {/* Social Icons */}
+          <div className="flex gap-6 justify-center">
             {socialLinks.map((social, index) => (
               <motion.a
                 key={index}
                 href={social.href}
-                aria-label={social.label}
-                className="w-12 h-12 rounded-full bg-muted hover:bg-primary/10 flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
-                whileHover={{ scale: 1.1, rotate: 5 }}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.icon.name}
+                whileHover={{ scale: 1.2, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <social.icon className="h-5 w-5" />
+                <social.icon
+                  className="h-6 w-6 transition-transform"
+                  style={{ color: social.color }}
+                />
               </motion.a>
             ))}
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
-            <a href="#home" className="hover:text-primary transition-colors">
-              Home
-            </a>
-            <a href="#about" className="hover:text-primary transition-colors">
-              About
-            </a>
-            <a href="#services" className="hover:text-primary transition-colors">
-              Services
-            </a>
-            <a href="#projects" className="hover:text-primary transition-colors">
-              Projects
-            </a>
-            <a href="#contact" className="hover:text-primary transition-colors">
-              Contact
-            </a>
+          {/* 🟢 Footer navigation with same hover effect as navbar */}
+          <div className="flex flex-wrap justify-center gap-8 text-base font-medium">
+            {navItems.map((item, index) => (
+              <motion.a
+                key={item.name}
+                href={item.href}
+                className="text-foreground/80 hover:text-transparent bg-clip-text 
+                           bg-gradient-to-r from-orange-500 via-pink-500 to-yellow-400 
+                           transition-all duration-300 font-medium"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                {item.name}
+              </motion.a>
+            ))}
           </div>
 
+          {/* Footer Bottom */}
           <div className="text-center text-sm text-muted-foreground">
             <p className="flex items-center gap-2 justify-center">
               Made with <Heart className="h-4 w-4 text-red-500 fill-red-500" /> by Nazrul Islam

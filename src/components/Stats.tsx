@@ -9,9 +9,9 @@ export function Stats() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const stats = [
-    { value: 50, suffix: "+", label: "Projects Completed" },
-    { value: 30, suffix: "+", label: "Happy Clients" },
-    { value: 3, suffix: "+", label: "Years Experience" },
+    { value: 23, suffix: "+", label: "Projects Completed" },
+    { value: 15, suffix: "+", label: "Happy Clients" },
+    { value: 3, suffix: "+", label: "Years Self-Employed" },
     { value: 100, suffix: "%", label: "Client Satisfaction" },
   ]
 
@@ -26,13 +26,21 @@ export function Stats() {
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: index * 0.1, duration: 0.5 }}
             >
-              <Card className="p-8 text-center hover:shadow-xl transition-shadow border-2 hover:border-primary/50 group">
+              <Card
+                className="bg-card rounded-lg p-6 border-b-2 border-r-2 border-rose-600 hover:bg-gradient-to-r from-gray-100 to-rose-300 dark:hover:from-gray-800 dark:hover:to-rose-500"
+              >
+
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : {}}
                   transition={{ delay: 0.5 + index * 0.1, type: "spring" }}
                 >
-                  <CountUpAnimation end={stat.value} suffix={stat.suffix} isInView={isInView} delay={index * 0.1} />
+                  <CountUpAnimation
+                    end={stat.value}
+                    suffix={stat.suffix}
+                    isInView={isInView}
+                    delay={index * 0.1}
+                  />
                   <p className="text-muted-foreground font-medium mt-2">{stat.label}</p>
                 </motion.div>
               </Card>
@@ -77,7 +85,8 @@ function CountUpAnimation({
   }, [isInView, end, delay])
 
   return (
-    <h3 className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+    // 🟢 Added gradient effect for number text
+    <h3 className="text-5xl font-bold bg-gradient-to-r from-[#ff6b6b] via-[#f7b733] to-[#45aaf2] bg-clip-text text-transparent">
       {count}
       {suffix}
     </h3>
