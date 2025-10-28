@@ -92,7 +92,7 @@ export function Hero() {
                         <div className="flex gap-6 justify-center">
                             {[
                                 { icon: Github, href: "https://github.com/NazrulBoston" },
-                                { icon: Linkedin, href: "https://linkedin.com/", color: "#0A66C2" },
+                                { icon: Linkedin, href: "https://www.linkedin.com/in/nazrul-islam-4a7912394/", color: "#0A66C2" },
                                 { icon: Youtube, href: "https://youtube.com/@triplesisters123", color: "#FF0000" },
                                 { icon: Facebook, href: "https://www.facebook.com/nazrul.dobon.islam/", color: "#1877F2" },
                                 { icon: Mail, href: "#contact", color: "#EA4335" },
