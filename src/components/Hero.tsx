@@ -86,6 +86,22 @@ export function Hero() {
                             >
                                 <a href="#contact">Get In Touch</a>
                             </Button>
+
+                            {/*Download Resume Button */}
+                            <Button
+                                size="lg"
+                                variant='outline'
+                                className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white"
+                                asChild
+                            >
+                                {/* Link to your PDF resume in the public folder */}
+                                <a
+                                    href="/Nazrul_Islam_Resume.pdf"
+                                    download="Nazrul_Islam_Resume.pdf"
+                                >
+                                    Download Resume
+                                </a>
+                            </Button>
                         </div>
 
                         {/* Social Links */}
