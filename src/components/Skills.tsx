@@ -17,7 +17,7 @@ export function Skills() {
                 { name: "TypeScript", level: 56 },
                 { name: "Tailwind CSS", level: 92 },
                 { name: "HTML/CSS", level: 95 },
-                { name: "Redux", level: 44 },
+            
             ],
             color: "primary",
         },
@@ -27,9 +27,9 @@ export function Skills() {
                 { name: "Node.js", level: 90 },
                 { name: "Express.js", level: 92 },
                 { name: "MongoDB", level: 88 },
-                { name: "PostgreSQL", level: 80 },
+                { name: "PostgreSQL", level: 70 },
                 { name: "REST APIs", level: 93 },
-                { name: "GraphQL", level: 66 },
+               
             ],
             color: "secondary",
         },
@@ -37,11 +37,8 @@ export function Skills() {
             title: "Tools & Others",
             skills: [
                 { name: "Git & GitHub", level: 90 },
-                { name: "Docker", level: 75 },
-                { name: "AWS", level: 70 },
-                { name: "Jest", level: 80 },
                 { name: "Figma", level: 85 },
-                { name: "Agile/Scrum", level: 88 },
+                { name: "Agile/Scrum", level: 78 },
             ],
             color: "accent",
         },
